@@ -1,0 +1,82 @@
+<template>
+  <section class="container">
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+      <div class="col">
+        <div
+          class="
+            card card-cover
+            h-100
+            overflow-hidden
+            text-white
+            bg-dark
+            rounded-5
+            shadow-lg
+          "
+          style="background-image: url('imagenes/apto11.jpg')"
+        >
+          <div
+            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+          >
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Apartamentos</h3>
+            <ul class="d-flex list-unstyled mt-auto">
+              <li class="me-auto">
+                <p>para estrenar</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div
+          class="
+            card card-cover
+            h-100
+            overflow-hidden
+            text-white
+            bg-dark
+            rounded-5
+            shadow-lg
+          "
+          style="background-image: url('imagenes/farm00.jpg')"
+        >
+          <div
+            class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1"
+          >
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Fincas</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div
+          class="
+            card card-cover
+            h-100
+            overflow-hidden
+            text-white
+            bg-dark
+            rounded-5
+            shadow-lg
+          "
+          style="background-image: url('imagenes/house22.jpg')"
+        >
+          <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Casas</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+export default {
+  name: "Homemain",
+  props: {
+    title: String,
+  },
+  components: {},
+  computed: {},
+};
+</script>
