@@ -67,7 +67,7 @@
           />
         </form>
 
-        <div class="dropdown text-end">
+        <div class="dropdown text-end me-3">
           <router-link
             to="#"
             class="d-block link-dark text-decoration-none dropdown-toggle"
@@ -102,7 +102,7 @@
         </div>
         <div class="text-end">
           <router-link to="/login"
-            ><button type="button" class="btn btn-mio bg-opacity-50">
+            ><button type="button" class="btn btn-mio bg-opacity-50 me-2">
               Login
             </button></router-link
           >
