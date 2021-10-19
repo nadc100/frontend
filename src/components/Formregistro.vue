@@ -1,13 +1,19 @@
 <template>
-  <form class="needs-validation" novalidate>
+  <form
+    class="needs-validation"
+    novalidate
+    id="form"
+    v-on:submit.prevent="addUser"
+  >
     <div class="row g-3">
       <div class="col-sm-6">
         <label for="firstName" class="form-label">Nombre</label>
         <input
           type="text"
           class="form-control"
-          id="firstName"
-          placeholder=""
+          id="newuserName"
+          v-model="newUser.name"
+          placeholder="nombre"
           value=""
           required
         />
@@ -19,7 +25,8 @@
         <input
           type="text"
           class="form-control"
-          id="lastName"
+          id="newuserLastName"
+          v-model="newUser.lastname"
           placeholder=""
           value=""
           required
@@ -35,6 +42,7 @@
             type="text"
             class="form-control"
             id="username"
+            v-model="newUser.username"
             placeholder="Usuario"
             required
           />
@@ -50,6 +58,7 @@
           type="email"
           class="form-control"
           id="email"
+          v-model="newUser.email"
           placeholder="nombre@example.com"
         />
         <div class="invalid-feedback">
@@ -63,6 +72,7 @@
           type="text"
           class="form-control"
           id="address"
+          v-model="newUser.address"
           placeholder="Dirección actual"
           required
         />
@@ -77,26 +87,33 @@
           type="text"
           class="form-control"
           id="address2"
+          v-model="newUser.address2"
           placeholder="Apartamento"
         />
       </div>
 
       <div class="col-md-5">
         <label for="country" class="form-label">País</label>
-        <select class="form-select" id="country" required>
-          <option value="">Escoja..</option>
-          <option>United States</option>
+        <select
+          class="form-select"
+          id="country"
+          required
+          v-model="newUser.country"
+        >
+          <option value="">País..</option>
+          <option>Colombia</option>
+          <option>Otro</option>
         </select>
         <div class="invalid-feedback">Please select a valid country.</div>
       </div>
 
       <div class="col-md-4">
         <label for="state" class="form-label">Dpto</label>
-        <select class="form-select" id="state" required>
-          <option value="">Choose...</option>
-          <option>California</option>
+        <select class="form-select" id="state" required v-model="newUser.state">
+          <option value="">Dpto...</option>
+          <option>Antioquia</option>
         </select>
-        <div class="invalid-feedback">Please provide a valid state.</div>
+        <div class="invalid-feedback">Departamento válido.</div>
       </div>
 
       <div class="col-md-3">
@@ -104,11 +121,12 @@
         <input
           type="text"
           class="form-control"
-          id="zip"
-          placeholder=""
+          id="codigoPostal"
+          placeholder="còdio de correo"
+          v-model="newUser.codigoPostal"
           required
         />
-        <div class="invalid-feedback">Zip code required.</div>
+        <div class="invalid-feedback">Código postal se requiere.</div>
       </div>
     </div>
 
@@ -125,6 +143,7 @@
       class="w-100 btn btn-lg btn-mio"
       type="submit"
       style="background-color: #2ecc71"
+      value="Add User"
     >
       Registro
     </button>
@@ -133,6 +152,19 @@
 <script>
 export default {
   name: "Formregistro",
+  props: {
+    newUser: {
+      name: String,
+      lastname: String,
+      username: String,
+      email: String,
+      address: String,
+      address2: String,
+      country: String,
+      state: String,
+      codigoPostal: String,
+    },
+  },
 };
 </script>
 
